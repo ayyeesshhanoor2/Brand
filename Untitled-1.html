@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand | Build Better Websites</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e6e6fa;  /* lavender */
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.4;
+            padding: 1.5rem 2rem;
+        }
+
+        /* Navigation Bar (replaces first table) */
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: transparent;
+            margin-bottom: 3rem;
+            gap: 1rem;
+        }
+
+        .brand {
+            font-size: 2rem;      /* size="6" equivalent ~32px */
+            font-weight: bold;
+            color: #800080;       /* purple */
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: #4a2b6e;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #9b30ff;
+            text-decoration: underline;
+        }
+
+        .btn-get-started {
+            background-color: #8a2be2; /* blueviolet / purple tone */
+            color: white;
+            border: none;
+            padding: 0.6rem 1.4rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-get-started:hover {
+            background-color: #6a1bb5;
+            transform: scale(1.02);
+        }
+
+        /* Hero Section - replaces second table */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .hero-headline {
+            font-size: 3.5rem;   /* approx size 8 (72px ?) but responsive */
+            font-weight: 800;
+            color: #800080;       /* purple */
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-subhead {
+            font-size: 3rem;     /* size 7 */
+            font-weight: 800;
+            color: #800080;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.5rem;   /* size 6 = 24px approx */
+            color: #ffffff;
+            background-color: rgba(128, 0, 128, 0.15); /* subtle purple translucent */
+            display: inline-block;
+            padding: 0.2rem 0;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description span {
+            background-color: transparent;
+            color: white;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* since original used white text for description, we enhance readability */
+        .description-text {
+            font-size: 1.5rem;
+            color: #2d1b3c;
+            background: rgba(255,255,240,0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 28px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        /* Buttons group */
+        .button-group {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: #8a2be2;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary:hover {
+            background-color: #6a1bb5;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #6a1bb5;
+            border: 2px solid #8a2be2;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0e6ff;
+            border-color: #6a1bb5;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            width: 280px;    /* original width=250, slight flexibility */
+            height: auto;
+            border-radius: 28px;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 800px) {
+            body {
+                padding: 1rem;
+            }
+            .hero-headline {
+                font-size: 2.8rem;
+            }
+            .hero-subhead {
+                font-size: 2.4rem;
+            }
+            .description-text {
+                font-size: 1.2rem;
+            }
+            .hero-description {
+                font-size: 1.2rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .button-group {
+                justify-content: center;
+            }
+            .description-text {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /* extra spacing to mimic original <br><br> vibe */
+        .spacer-sm {
+            margin-top: 0.5rem;
+        }
+        .mt-2 {
+            margin-top: 1rem;
+        }
+        hr.spacer {
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (replaces first table: Brand, Home, Features, About, Contact, Get Started) -->
+    <div class="navbar">
+        <div class="brand">Brand.</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <div>
+            <button class="btn-get-started">Get Started</button>
+        </div>
+    </div>
+
+    <!-- Hero section: replaces second table (text + image) -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-headline">Build better websites</div>
+            <div class="hero-subhead">In less time</div>
+            
+            <!-- description block: original had <font color="white"> but background lavender, I'll keep white text with subtle background for contrast -->
+            <div class="description-text">
+                ✨ We help you build websites using simple HTML code.
+            </div>
+            
+            <div class="button-group">
+                <button class="btn-primary">Get Started</button>
+                <button class="btn-secondary">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- preserving the original image source 'images2.jpg' as per original code -->
+            <img src="images2.jpg" alt="Website building illustration" width="250">
+        </div>
+    </div>
+
+    <!-- subtle extra spacing (original had <br><br> after table, we keep layout clean) -->
+    <div style="height: 1rem;"></div>
+</body>
+</html>

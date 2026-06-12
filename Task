@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bakery Products</title>
+
+    <style>
+        body
+        {
+            background-color: lightgray;
+            font-family: Arial;
+        }
+
+        .card
+        {
+            width: 700px;
+            height: 130px;
+            background-color: white;
+            margin: 20px auto;
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        .image
+        {
+            width: 120px;
+            height: 120px;
+            float: left;
+            border-radius: 15px;
+        }
+
+        .content
+        {
+            margin-left: 140px;
+        }
+
+        .title
+        {
+            font-size: 28px;
+        }
+
+        .stock
+        {
+            float: right;
+            background-color: #dff5df;
+            color: green;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        .lowstock
+        {
+            float: right;
+            background-color: #fff0c7;
+            color: orange;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        .price
+        {
+            color: blue;
+            font-size: 30px;
+            margin-top: 15px;
+        }
+
+        .delete
+        {
+            float: right;
+            background-color: royalblue;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <img src="bread.jpg" class="image">
+
+        <div class="content">
+            <span class="stock">In Stock : 40</span>
+
+            <h2>Whole Wheat Loaf</h2>
+
+            <p>Nutritious, fiber-rich, and wholesome loaves.</p>
+
+            <span class="price">$4.50</span>
+
+            <span class="delete">🗑</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="muffin.jpg" class="image">
+
+        <div class="content">
+            <span class="stock">In Stock : 40</span>
+
+            <h2>Sweet Berry Muffin</h2>
+
+            <p>Soft muffin filled with fresh juicy blueberries.</p>
+
+            <span class="price">$6.50</span>
+
+            <span class="delete">🗑</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="cake.jpg" class="image">
+
+        <div class="content">
+            <span class="stock">In Stock : 40</span>
+
+            <h2>Red Velvet Treat</h2>
+
+            <p>Rich, moist red velvet with creamy frosting.</p>
+
+            <span class="price">$7.00</span>
+
+            <span class="delete">🗑</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="donut.jpg" class="image">
+
+        <div class="content">
+            <span class="lowstock">Low Stock : 10</span>
+
+            <h2>Frosted Bliss Donut</h2>
+
+            <p>Soft donut with colorful sprinkles.</p>
+
+            <span class="price">$5.00</span>
+
+            <span class="delete">🗑</span>
+        </div>
+    </div>
+
+</body>
+</html>
