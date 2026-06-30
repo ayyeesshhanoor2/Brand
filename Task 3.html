@@ -1,350 +1,297 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Architecture Website</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRefine | Build Better Websites</title>
     <style>
-
        
-        body{
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-           background-color: #d3d3d3;   
+            box-sizing: border-box;
         }
 
-        .container{
-            width: 90%;
-            margin: auto;
+        body {
+            background-color: #e6e6fa;  
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.4;
+            padding: 1.5rem 2rem;
         }
 
        
-        nav{
+        .navbar {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
             align-items: center;
-            padding: 20px 0;
-        }
-
-        nav ul{
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a{
-            text-decoration: none;
-            color: black;
-        }
-
-       
-       .hero{
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.hero img{
-    width: 100%;
-    display: block;
-    border-radius: 15px;
-}
-
-.hero-text{
-    position: absolute;
-    top: 50%;
-    left: 50px;
-    transform: translateY(-50%);
-    color: white;
-    max-width: 500px;
-}
-
-.hero-text h1{
-    font-size: 50px;
-}
-
-.hero-text button{
-    padding: 12px 25px;
-    background: black;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-
-     
-        .about{
-            margin-top: 50px;
-            display: flex;
             justify-content: space-between;
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
+            background: transparent;
+            margin-bottom: 3rem;
+            gap: 1rem;;
         }
 
-        .stats{
+        .WebRefine{
+            font-size: 2rem;      
+            font-weight: bold;
+            color: #800080;       
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
-        .stats h2{
-            margin: 0;
+        .nav-links a {
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: #4a2b6e;
+            font-weight: 500;
+            transition: color 0.2s ease;
         }
 
-        
-        .services{
-            margin-top: 50px;
+        .nav-links a:hover {
+            color: #9b30ff;
+            text-decoration: underline;
         }
 
-        .service-cards{
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 20px;
+        .btn-get-started {
+            background-color: #8a2be2; 
+            color: white;
+            border: none;
+            padding: 0.6rem 1.4rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
-        .card{
-            background: white;
-            padding: 10px;
-            border-radius: 15px;
+        .btn-get-started:hover {
+            background-color: #6a1bb5;
+            transform: scale(1.02);
         }
 
-        .card img{
-            width: 100%;
-            border-radius: 10px;
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 2rem 0 3rem;
         }
 
-       
-        .portfolio{
-            margin-top: 50px;
+        .hero-content {
+            flex: 1;
+            min-width: 250px;
         }
 
-        .portfolio-grid{
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 20px;
+        .hero-headline {
+            font-size: 3.5rem;  
+            font-weight: 800;
+            color: #800080;     
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
         }
 
-        .portfolio-grid img{
-            width: 100%;
-            border-radius: 15px;
+        .hero-subhead {
+            font-size: 3rem;   
+            font-weight: 800;
+            color: #800080;
+            line-height: 1.2;
+            margin-bottom: 1rem;
         }
 
-        .btn-center{
-            text-align: center;
-            margin-top: 20px;
+        .hero-description {
+            font-size: 1.5rem;   
+            color: #ffffff;
+            background-color: rgba(128, 0, 128, 0.15); 
+            display: inline-block;
+            padding: 0.2rem 0;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
         }
 
-        .btn-center button{
-            padding: 10px 25px;
-            border-radius: 20px;
-            border: 1px solid black;
-            background: white;
+        .hero-description span {
+            background-color: transparent;
+            color: white;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
 
     
-.footer{
-    background: #222;
-    color: white;
-    margin-top: 50px;
-    padding: 40px 20px;
-}
+        .description-text {
+            font-size: 1.5rem;
+            color: #2d1b3c;
+            background: rgba(255,255,240,0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 28px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
 
-.footer-content{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
-}
+       
+        .button-group {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
 
-.footer-section{
-    flex: 1;
-    min-width: 220px;
-}
+        .btn-primary {
+            background-color: #8a2be2;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
 
-.footer h3{
-    margin-bottom: 15px;
-}
+        .btn-primary:hover {
+            background-color: #6a1bb5;
+            transform: translateY(-2px);
+        }
 
-.footer p,
-.footer a{
-    color: #ddd;
-    text-decoration: none;
-    line-height: 1.8;
-}
+        .btn-secondary {
+            background-color: transparent;
+            color: #6a1bb5;
+            border: 2px solid #8a2be2;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
 
-.footer a:hover{
-    color: white;
-}
+        .btn-secondary:hover {
+            background-color: #f0e6ff;
+            border-color: #6a1bb5;
+            transform: translateY(-2px);
+        }
 
-.footer-bottom{
-    text-align: center;
-    border-top: 1px solid #555;
-    margin-top: 25px;
-    padding-top: 15px;
-    color: #bbb;
-}
+        .hero-image {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .hero-image img {
+            max-width: 100%;
+            width: 280px;    
+            height: auto;
+            border-radius: 28px;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.02);
+        }
+
+       
+        @media (max-width: 800px) {
+            body {
+                padding: 1rem;
+            }
+            .hero-headline {
+                font-size: 2.8rem;
+            }
+            .hero-subhead {
+                font-size: 2.4rem;
+            }
+            .description-text {
+                font-size: 1.2rem;
+            }
+            .hero-description {
+                font-size: 1.2rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .button-group {
+                justify-content: center;
+            }
+            .description-text {
+                display: block;
+                text-align: center;
+            }
+        }
+
+    
+        .spacer-sm {
+            margin-top: 0.5rem;
+        }
+        .mt-2 {
+            margin-top: 1rem;
+        }
+        hr.spacer {
+            margin: 1rem 0;
+        }
     </style>
 </head>
-
 <body>
 
-<div class="container">
+    
+    <div class="navbar">
+        <div class="WebRefine">WebRefine.</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <div>
+            <button class="btn-get-started">Get Started</button>
+        </div>
+    </div>
 
     
-    <nav>
-        <h2>Apex Arc</h2>
-
-        <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Process</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
-   
     <div class="hero">
-
-    <img src="image1.jpeg" alt="Image 1">
-
-    <div class="hero-text">
-        <h1>Designing Spaces That Inspire & Endure</h1>
-
-        <p>
-            We transform visions into timeless architecture,
-            blending innovative design with functional excellence.
-        </p>
-
-        <button>Schedule a Free Consultation</button>
-    </div>
-
-</div>
-
-    <div class="about">
-
-        <div>
-            <h2>About Company</h2>
-
-            <p>
-                At Apex Architects, we believe architecture is more
-                than buildings. It is about creating environments
-                that enhance human experience.
-            </p>
+        <div class="hero-content">
+            <div class="hero-headline">Build better websites</div>
+            <div class="hero-subhead">In less time</div>
+            
+            
+            <div class="description-text">
+                ✨ We help you build websites using simple HTML code.
+            </div>
+            
+            <div class="button-group">
+                <button class="btn-primary">Get Started</button>
+                <button class="btn-secondary">Learn More</button>
+            </div>
         </div>
-
-        <div class="stats">
-            <div>
-                <h2>25+</h2>
-                <p>Years Experience</p>
-            </div>
-
-            <div>
-                <h2>500+</h2>
-                <p>Projects</p>
-            </div>
-
-            <div>
-                <h2>98%</h2>
-                <p>Client Retention</p>
-            </div>
-            <div>
-                <h2>15+</h2>
-                <p>Countries</p>
-            </div>
+        <div class="hero-image">
+            <img src="images2.jpg" alt="Website building illustration" width="250">
         </div>
     </div>
-
-    <div class="services">
-
-        <h2>Services We Provide</h2>
-
-        <div class="service-cards">
-
-            <div class="card">
-                <img src="image2.jpeg" alt="Image 2">
-                <h3>Arch Design</h3>
-                <p>Modern architecture solutions.</p>
-            </div>
-
-            <div class="card">
-                <img src="image3.jpeg" alt="Image 3">
-                <h3>Interior Design</h3>
-                <p>Beautiful interior spaces.</p>
-            </div>
-
-            <div class="card">
-                <img src="image4.jpeg" alt="Image 4">
-                <h3>Urban Planning</h3>
-                <p>Designing better communities.</p>
-            </div>
-
-            <div class="card">
-                <img src="image5.jpeg" alt="Image 5">
-                <h3>Project Management</h3>
-                <p>Managing projects efficiently.</p>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="portfolio">
-
-        <h2>Our Portfolio of Pioneering Design</h2>
-
-        <div class="portfolio-grid">
-
-            <img src="image6.jpeg" alt="Image 6">
-
-            <img src="image7.jpeg" alt="Image 7">
-
-            <img src="image8.jpeg" alt="Image 8">
-
-            <img src="image9.jpeg" alt="Image 9">
-
-        </div>
-
-        <div class="btn-center">
-            <button>See More Projects</button>
-        </div>
-
-    </div>
-
-</div>
-<footer class="footer">
-
-    <div class="container">
-
-        <div class="footer-content">
-
-            <div class="footer-section">
-                <h3>Apex Arc</h3>
-                <p>
-                    Designing spaces that inspire and endure with
-                    innovative architecture and timeless design.
-                </p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p>📍 123 Architecture Street, Pakistan</p>
-                <p>📞 +92 300 1234567</p>
-                <p>✉️ info@apexarc.com</p>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Apex Arc. All Rights Reserved.</p>
-        </div>
-
-    </div>
-
-</footer>
-
+    <div style="height: 1rem;"></div>
 </body>
 </html>
+
