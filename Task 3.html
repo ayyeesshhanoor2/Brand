@@ -1,297 +1,675 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebRefine | Build Better Websites</title>
-    <style>
-       
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            background-color: #e6e6fa;  
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            line-height: 1.4;
-            padding: 1.5rem 2rem;
-        }
+<title>WebRefine | Build Better Websites</title>
 
-       
-        .navbar {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            background: transparent;
-            margin-bottom: 3rem;
-            gap: 1rem;;
-        }
+<style>
 
-        .WebRefine{
-            font-size: 2rem;      
-            font-weight: bold;
-            color: #800080;       
-            letter-spacing: 0.5px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        .nav-links a {
-            text-decoration: none;
-            font-size: 1.1rem;
-            color: #4a2b6e;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#e6e6fa;
+    color:#333;
+    line-height:1.6;
+    padding:25px 40px;
+}
 
-        .nav-links a:hover {
-            color: #9b30ff;
-            text-decoration: underline;
-        }
+/*================ NAVBAR ================*/
 
-        .btn-get-started {
-            background-color: #8a2be2; 
-            color: white;
-            border: none;
-            padding: 0.6rem 1.4rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 40px;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    margin-bottom:60px;
+}
 
-        .btn-get-started:hover {
-            background-color: #6a1bb5;
-            transform: scale(1.02);
-        }
+.WebRefine{
+    font-size:2rem;
+    font-weight:bold;
+    color:#800080;
+}
+
+.nav-links{
+    display:flex;
+    gap:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#4b286d;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#8a2be2;
+}
+
+.btn-get-started{
+    background:#8a2be2;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:40px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-get-started:hover{
+    background:#6d1cb6;
+}
+
+/*================ HERO ================*/
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+    flex-wrap:wrap;
+    margin-bottom:120px;
+}
+
+.hero-content{
+    flex:1;
+}
+
+.hero-headline{
+    font-size:4rem;
+    color:#800080;
+    font-weight:800;
+    line-height:1.1;
+}
+
+.hero-subhead{
+    font-size:3.5rem;
+    color:#800080;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.description-text{
+    background:rgba(255,255,255,.65);
+    padding:14px 22px;
+    display:inline-block;
+    border-radius:30px;
+    font-size:1.2rem;
+    margin-bottom:35px;
+}
+
+.button-group{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn-primary{
+    background:#8a2be2;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:40px;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    background:#6d1cb6;
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    background:transparent;
+    color:#8a2be2;
+    border:2px solid #8a2be2;
+    padding:15px 35px;
+    border-radius:40px;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-secondary:hover{
+    background:white;
+}
+
+.hero-image{
+    flex:1;
+    text-align:center;
+}
+
+.hero-image img{
+    width:360px;
+    max-width:100%;
+    border-radius:25px;
+    box-shadow:0 20px 35px rgba(0,0,0,.15);
+}
+
+/*================ SECTION COMMON ================*/
+
+section{
+    margin-bottom:120px;
+}
+
+.section-tag{
+    text-align:center;
+    color:#8a2be2;
+    letter-spacing:2px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.7rem;
+    color:#800080;
+    margin:15px 0;
+}
+
+.section-text{
+    text-align:center;
+    max-width:650px;
+    margin:auto;
+    color:#555;
+}
+
+/*=========================
+        FEATURES
+=========================*/
+
+.feature-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:60px;
+}
+
+.feature-card{
+    background:#fff;
+    width:320px;
+    padding:35px 25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 18px 35px rgba(138,43,226,.18);
+}
+
+.icon{
+    width:75px;
+    height:75px;
+    margin:auto;
+    margin-bottom:20px;
+    border-radius:50%;
+    background:#f2e5ff;
+    color:#8a2be2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+}
+
+.feature-card h3{
+    color:#800080;
+    margin-bottom:15px;
+    font-size:1.4rem;
+}
+
+.feature-card p{
+    color:#555;
+    line-height:1.7;
+}
 
 
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-            margin: 2rem 0 3rem;
-        }
+/*=========================
+          ABOUT
+=========================*/
 
-        .hero-content {
-            flex: 1;
-            min-width: 250px;
-        }
+.about{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
 
-        .hero-headline {
-            font-size: 3.5rem;  
-            font-weight: 800;
-            color: #800080;     
-            line-height: 1.2;
-            margin-bottom: 0.25rem;
-        }
+.about-image{
+    flex:1;
+    text-align:center;
+}
 
-        .hero-subhead {
-            font-size: 3rem;   
-            font-weight: 800;
-            color: #800080;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
+.about-image img{
+    width:380px;
+    max-width:100%;
+    border-radius:25px;
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+}
 
-        .hero-description {
-            font-size: 1.5rem;   
-            color: #ffffff;
-            background-color: rgba(128, 0, 128, 0.15); 
-            display: inline-block;
-            padding: 0.2rem 0;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-        }
+.about-content{
+    flex:1;
+    min-width:320px;
+}
 
-        .hero-description span {
-            background-color: transparent;
-            color: white;
-            font-weight: 500;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-        }
+.about-content .section-tag{
+    text-align:left;
+}
 
-    
-        .description-text {
-            font-size: 1.5rem;
-            color: #2d1b3c;
-            background: rgba(255,255,240,0.7);
-            padding: 0.5rem 1rem;
-            border-radius: 28px;
-            display: inline-block;
-            margin-bottom: 2rem;
-            font-weight: 500;
-        }
+.about-content h2{
+    font-size:2.6rem;
+    color:#800080;
+    margin:18px 0;
+}
 
-       
-        .button-group {
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-            margin-top: 0.5rem;
-        }
+.about-content p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:30px;
+}
 
-        .btn-primary {
-            background-color: #8a2be2;
-            color: white;
-            border: none;
-            padding: 0.8rem 2rem;
-            font-size: 1rem;
-            font-weight: 700;
-            border-radius: 40px;
-            cursor: pointer;
-            transition: all 0.2s;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-        }
 
-        .btn-primary:hover {
-            background-color: #6a1bb5;
-            transform: translateY(-2px);
-        }
+/*=========================
+          FOOTER
+=========================*/
 
-        .btn-secondary {
-            background-color: transparent;
-            color: #6a1bb5;
-            border: 2px solid #8a2be2;
-            padding: 0.8rem 2rem;
-            font-size: 1rem;
-            font-weight: 700;
-            border-radius: 40px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
+footer{
+    background:#6b21a8;
+    color:white;
+    padding:60px 45px 25px;
+    border-radius:30px;
+}
 
-        .btn-secondary:hover {
-            background-color: #f0e6ff;
-            border-color: #6a1bb5;
-            transform: translateY(-2px);
-        }
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+}
 
-        .hero-image {
-            flex: 0.8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.footer-container h2,
+.footer-container h3{
+    margin-bottom:18px;
+}
 
-        .hero-image img {
-            max-width: 100%;
-            width: 280px;    
-            height: auto;
-            border-radius: 28px;
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-        }
+.footer-container p{
+    color:#eee;
+}
 
-        .hero-image img:hover {
-            transform: scale(1.02);
-        }
+.footer-container a{
+    display:block;
+    text-decoration:none;
+    color:#eee;
+    margin-bottom:10px;
+    transition:.3s;
+}
 
-       
-        @media (max-width: 800px) {
-            body {
-                padding: 1rem;
-            }
-            .hero-headline {
-                font-size: 2.8rem;
-            }
-            .hero-subhead {
-                font-size: 2.4rem;
-            }
-            .description-text {
-                font-size: 1.2rem;
-            }
-            .hero-description {
-                font-size: 1.2rem;
-            }
-            .nav-links {
-                gap: 1rem;
-            }
-        }
+.footer-container a:hover{
+    color:#fff;
+    padding-left:5px;
+}
 
-        @media (max-width: 650px) {
-            .navbar {
-                flex-direction: column;
-                align-items: stretch;
-                text-align: center;
-            }
-            .nav-links {
-                justify-content: center;
-            }
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-            .button-group {
-                justify-content: center;
-            }
-            .description-text {
-                display: block;
-                text-align: center;
-            }
-        }
+.footer-container input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    margin-bottom:15px;
+    outline:none;
+}
 
-    
-        .spacer-sm {
-            margin-top: 0.5rem;
-        }
-        .mt-2 {
-            margin-top: 1rem;
-        }
-        hr.spacer {
-            margin: 1rem 0;
-        }
-    </style>
+.footer-container button{
+    width:100%;
+    background:#8a2be2;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.footer-container button:hover{
+    background:#7b1fd4;
+}
+
+footer hr{
+    border:none;
+    border-top:1px solid rgba(255,255,255,.25);
+    margin:40px 0 20px;
+}
+
+.copyright{
+    text-align:center;
+    color:#ddd;
+}
+
+
+/*=========================
+      RESPONSIVE
+=========================*/
+
+@media(max-width:992px){
+
+.hero{
+    flex-direction:column-reverse;
+    text-align:center;
+}
+
+.button-group{
+    justify-content:center;
+}
+
+.hero-headline{
+    font-size:3.2rem;
+}
+
+.hero-subhead{
+    font-size:2.8rem;
+}
+
+.about{
+    flex-direction:column;
+    text-align:center;
+}
+
+.about-content .section-tag{
+    text-align:center;
+}
+
+.about-content h2{
+    font-size:2.2rem;
+}
+
+.navbar{
+    flex-direction:column;
+    gap:20px;
+}
+
+.nav-links{
+    gap:20px;
+}
+
+}
+
+
+@media(max-width:600px){
+
+body{
+    padding:20px;
+}
+
+.hero-headline{
+    font-size:2.5rem;
+}
+
+.hero-subhead{
+    font-size:2rem;
+}
+
+.section-title{
+    font-size:2rem;
+}
+
+.feature-card{
+    width:100%;
+}
+
+.about-image img{
+    width:100%;
+}
+
+footer{
+    padding:40px 25px;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-    
-    <div class="navbar">
-        <div class="WebRefine">WebRefine.</div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Features</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </div>
-        <div>
-            <button class="btn-get-started">Get Started</button>
-        </div>
-    </div>
+<div class="navbar">
 
-    
-    <div class="hero">
-        <div class="hero-content">
-            <div class="hero-headline">Build better websites</div>
-            <div class="hero-subhead">In less time</div>
-            
-            
-            <div class="description-text">
-                ✨ We help you build websites using simple HTML code.
-            </div>
-            
-            <div class="button-group">
-                <button class="btn-primary">Get Started</button>
-                <button class="btn-secondary">Learn More</button>
-            </div>
-        </div>
-        <div class="hero-image">
-            <img src="images2.jpg" alt="Website building illustration" width="250">
-        </div>
-    </div>
-    <div style="height: 1rem;"></div>
-</body>
-</html>
+<div class="WebRefine">
+WebRefine.
+</div>
 
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Features</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</div>
+
+<button class="btn-get-started">
+Get Started
+</button>
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1 class="hero-headline">
+Build Better Websites
+</h1>
+
+<h2 class="hero-subhead">
+In Less Time
+</h2>
+
+<div class="description-text">
+✨ We help you build websites using simple HTML & CSS.
+</div>
+
+<div class="button-group">
+
+<button class="btn-primary">
+Get Started
+</button>
+
+<button class="btn-secondary">
+Learn More
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="images2.jpg" alt="Hero">
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section id="features">
+
+<p class="section-tag">
+FEATURES
+</p>
+
+<h2 class="section-title">
+Why Choose WebRefine?
+</h2>
+
+<p class="section-text">
+Create responsive, fast and attractive websites with clean HTML and CSS.
+</p>
+
+<div class="feature-container">
+
+<div class="feature-card">
+
+<div class="icon">
+⚡
+</div>
+
+<h3>
+Fast Performance
+</h3>
+
+<p>
+Optimized layouts and lightweight code for lightning-fast websites.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="icon">
+🎨
+</div>
+
+<h3>
+Modern Design
+</h3>
+
+<p>
+Beautiful layouts with smooth colors, rounded corners and animations.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="icon">
+📱
+</div>
+
+<h3>
+Responsive
+</h3>
+
+<p>
+Looks great on desktop, tablet and mobile devices automatically.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<div class="about-image">
+
+<img src="images2.jpg" alt="About">
+
+</div>
+
+<div class="about-content">
+
+<p class="section-tag">
+ABOUT US
+</p>
+
+<h2>
+Helping Students Build Amazing Websites
+</h2>
+
+<p>
+WebRefine is built to make website creation easier for beginners.
+Our goal is to help students learn HTML and CSS through modern,
+responsive and attractive webpage designs.
+</p>
+
+<button class="btn-primary">
+Learn More
+</button>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+
+<h2>WebRefine.</h2>
+
+<p>
+Build Better Websites with Beautiful Designs.
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<a href="#">Home</a>
+<a href="#">Features</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+
+</div>
+
+<div>
+
+<h3>Resources</h3>
+
+<a href="#">Support</a>
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="#">FAQ</a>
+
+</div>
+
+<div>
+
+<h3>Newsletter</h3>
+
+<input type="email" placeholder="Enter your email">
+
+<button>
+Subscribe
+</button>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="copyright">
+© 2024 WebRefine. All Rights Reserved.
+</p>
+
+</footer>
